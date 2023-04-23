@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Check CrossOriginIsolated</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script type="module">
+      document.getElementById("txt").innerText = `CrossOriginIsolated:${crossOriginIsolated}`
+
+      const registration = await navigator.serviceWorker.register(
+        'sw.js',
+        {scope: './'},
+      );
+
+      console.log(`Service worker ${registration}`);
+
+    </script>
+  </head>
+  <body><p id="txt"></p></body>
+</html>
